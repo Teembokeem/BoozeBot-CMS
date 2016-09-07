@@ -1,18 +1,18 @@
-
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var bower = require('bower');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
+var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./scss/**/*.scss']
+  sass: ['./www/views/main/**/*.scss', './www/css/*.scss', '**/*.js']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['watch']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')
@@ -28,7 +28,17 @@ gulp.task('sass', function(done) {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(paths.sass, ['sass']);
+
+browserSync.init({
+  server: {
+    baseDir: './www/'
+  }
+})
+  gulp.watch(paths.sass, ['sass'])
+    .on('change', function(event) {
+      browserSync.reload();
+        console.log('File LOG' + event.path + ' was ' + event.type + ', running tasks...');
+      });
 });
 
 gulp.task('install', ['git-check'], function() {
@@ -37,6 +47,14 @@ gulp.task('install', ['git-check'], function() {
       gutil.log('bower', gutil.colors.cyan(data.id), data.message);
     });
 });
+
+gulp.task('sync', ['watch'], function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  })
+})
 
 gulp.task('git-check', function(done) {
   if (!sh.which('git')) {
