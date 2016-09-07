@@ -1,0 +1,120 @@
+/* Empty. Add your own CSS if you like */
+/* Empty. Add your own CSS if you like */
+.nopad {
+    padding: 0;
+    color: white;
+}
+
+body {
+
+    ui-view {
+
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        // background-image: url('http://blog.hdwallsource.com/wp-content/uploads/2014/11/gradient-background-26046-26731-hd-wallpapers.jpg.png');
+        // background-position: bottom;
+        background-color: grey;
+
+        * {
+            font-family: Avenir;
+        }
+
+        .main-container {
+
+            background: white;
+            height: 95%;
+            width: 95%;
+            margin:  auto;
+            // border: 1px solid rgb(200, 200, 200);
+            border-radius: 2em;
+            box-shadow: 0 0 2em black;
+            overflow: hidden;
+        }
+
+        .header-container {
+            border-bottom: 2px solid black;
+            height: 4%;
+
+
+
+            .hero-component {
+                width: 10%;
+                border-right: 1px solid rgb(140, 140, 140);
+                background-color: rgb(51,59,83);
+                
+                display: flex;
+                justify-content: center;
+
+                span {
+                    padding-top: 0.6em;
+                    color: white;
+                    // font-weight: bold;
+                }
+
+            }
+
+            .header-component {
+                width: 90%;
+                color: blue;
+                display: flex;
+                justify-content: flex-end;
+                box-shadow: 0px 10px 0.1em grey;
+
+                span {
+                    // padding-top: 0.2em;
+                    color: lightgrey;
+                    font-size: 2.5em;
+                }
+            }
+
+        }
+
+        .workspace-container {
+                height: 97%;
+                padding-top: 0.3em !important;
+
+                * {
+                    display: inline-block;
+                }
+            
+            .menu-component {
+                // color: red;
+                width: 10%;
+                border-right: 1px solid rgb(45,67,102);
+                background-color: rgb(51,59,83);
+
+                menu {
+                    width: 100%;
+                    color: white;
+                    // font-weight: bold;
+
+                    .menu-directive-view {
+                        width: 100%;
+                        background-color: rgb(50,80,115);
+
+                        .menu-item {
+                            padding-top: 0.5em;
+                            height: 3.5em;
+                            border-bottom: 1px solid rgb(45,67,102);
+                            text-align: left;
+                            padding-left: 1em;
+                        }
+                    }
+
+                }
+
+            }
+            .view-component {
+                width: 90%;
+                position: relative !important;
+                // border: 1px solid black;
+            }
+
+        }
+    }
+
+
+}
