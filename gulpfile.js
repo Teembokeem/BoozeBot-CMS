@@ -29,14 +29,14 @@ gulp.task('sass', function(done) {
 
 gulp.task('watch', function() {
 
-browserSync.init({
-  server: {
-    baseDir: './www/'
-  }
-})
+// browserSync.init({
+//   server: {
+//     baseDir: './www/'
+//   }
+// })
   gulp.watch(paths.sass, ['sass'])
     .on('change', function(event) {
-      browserSync.reload();
+      // browserSync.reload();
         console.log('File LOG' + event.path + ' was ' + event.type + ', running tasks...');
       });
 });
@@ -48,13 +48,13 @@ gulp.task('install', ['git-check'], function() {
     });
 });
 
-gulp.task('sync', ['watch'], function() {
-  browserSync.init({
-    server: {
-      baseDir: './'
-    }
-  })
-})
+// gulp.task('sync', ['watch'], function() {
+//   browserSync.init({
+//     server: {
+//       baseDir: './'
+//     }
+//   })
+// })
 
 gulp.task('git-check', function(done) {
   if (!sh.which('git')) {
