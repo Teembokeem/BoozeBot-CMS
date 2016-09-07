@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="BoozeBot-cms">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <!--SCSS-->
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
 
-    <!-- ionic/angularjs js -->
+    <!-- IONIC ANGULAR -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
+    <!-- CORE MODULES -->
+    <script src="core-modules/app.module.js"></script>
+    <script src="core-modules/app.controller.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
+      <!--DIRECTIVES-->
+      <script src="core-modules/directives/directives.module.js"></script>
+      <script src="core-modules/directives/content-title/content-title.directive.js"></script>
+      <script src="core-modules/directives/menu/menu.directive.js"></script>
+      <script src="core-modules/directives/orders-list/orders-list.directive.js"></script>
+
+      <!--SERVICES-->
+      <script src="core-modules/services/services.module.js"></script>
+      <script src="core-modules/services/storage.service.js"></script>
+
   </head>
-  <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!--
+ <body>
+    <!--top level components:
+      1. side menu
+      2. top header.
+      3. optional right side menu???? (tabled) -->
+
+
+
+    <!-- hello
       The views will be rendered in the <ion-nav-view> directive below
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
-    <ion-nav-view></ion-nav-view>
+    sup dude
+    <ui-view></ui-view>
+
   </body>
 </html>
