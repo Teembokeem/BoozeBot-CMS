@@ -9,7 +9,7 @@
    function menu() {
  
      var directive = {
-         templateUrl: 'js/directives/menu/menu.directive.html',
+         templateUrl: 'core-modules/directives/menu/menu.directive.html',
          
          link: link,
          restrict: 'EA',
