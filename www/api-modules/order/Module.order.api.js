@@ -2,12 +2,12 @@
   'use strict';
 
   angular.module('Order.api.module', ['Api.base.module'])
-    .run(function(OrdersManager, storage) {
+    .run(function(OrderManager, storage) {
       
-      OrdersManager.store = new storage('orders');
-      console.log('namespace', OrdersManager.namespace)
-      if (OrdersManager.store.getItem()) {
-        OrdersManager.orders = OrdersManager.store.getItem();
+      OrderManager.store = new storage('orders');
+      console.log('namespace', OrderManager.namespace)
+      if (OrderManager.store.getItem()) {
+        OrderManager.orders = OrderManager.store.getItem();
       }
     });
 })();
