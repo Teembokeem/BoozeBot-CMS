@@ -13,9 +13,9 @@ angular.module('BoozeBot-cms')
   console.log("SUH DUDE", $rootScope)
 
   $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
-        $log.info('Traveling to ' + toState);
+        $log.info('Traveling to ' + toState.url, toState);
         // $rootScope.contentTitle = ;
-  vm.contentTitle = toState.name
+  vm.contentTitle = toState.contentTitle
         console.log("your root scope", $rootScope.contentTitle)
 
         $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
