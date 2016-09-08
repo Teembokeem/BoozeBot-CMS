@@ -7,7 +7,9 @@
       'Directives',
       'Configs',
       'Dash.view.module',
-      'Orders.view.module'
+      'Orders.view.module',
+      'Sales.view.module',
+      'Profiles.view.module'
     ])
 
 
@@ -23,14 +25,6 @@
           controller: 'AppCtrl',
           controllerAs: 'ac'
           // abstract: true;
-        })
-
-
-        .state('booze.sales', {
-          url: '^/sales',
-          templateUrl: '/templates/tab-sales.html',
-          // controller: 'SalesCtrl',
-          // controllerAs: 'ac'
         })
 
         .state('booze.profiles', {
