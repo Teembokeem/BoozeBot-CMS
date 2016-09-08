@@ -6,8 +6,8 @@
     .module('Boom.api.module')
     .factory('Manager', Manager);
 
-  Manager.$inject = ['Requester', 'Schema', 'Booms', 'storage'];
-  function Manager(Requester, Schema, Booms, storage) {
+  Manager.$inject = ['Requester', 'Schema', 'storage'];
+  function Manager(Requester, Schema, storage) {
     var service = {
       booms : booms,
       makeBooms: makeBooms,
