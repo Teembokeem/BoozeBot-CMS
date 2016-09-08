@@ -6,17 +6,17 @@
 }
 
 body {
+    background-color: grey;
 
     ui-view {
 
-        height: 100vh;
-        width: 100vw;
+        height: 95vh;
+        width: 95%;
         display: flex;
         justify-content: center;
         align-content: center;
         // background-image: url('http://blog.hdwallsource.com/wp-content/uploads/2014/11/gradient-background-26046-26731-hd-wallpapers.jpg.png');
         // background-position: bottom;
-        background-color: grey;
 
         * {
             font-family: Avenir;
@@ -75,9 +75,11 @@ body {
         .workspace-container {
                 height: 97%;
                 padding-top: 0.3em !important;
+                
 
                 * {
                     display: inline-block;
+                    
                 }
             
             .menu-component {
@@ -109,6 +111,7 @@ body {
             }
             .view-component {
                 width: 90%;
+                height: 100%;
                 position: relative !important;
                 // border: 1px solid black;
             }
@@ -117,4 +120,9 @@ body {
     }
 
 
+}
+
+.content-title {
+    // color: red;
+    font-family: 'Oswald', sans-serif;
 }
