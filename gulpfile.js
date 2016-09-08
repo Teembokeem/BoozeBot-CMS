@@ -9,7 +9,7 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./www/views/main/**/*.scss', './www/css/*.scss', '**/*.js']
+  sass: ['./www/views/main/**/*.scss', './www/css/*.scss', './www/**/*', './www/**/**/*' ]
 };
 
 gulp.task('default', ['watch']);
@@ -27,16 +27,17 @@ gulp.task('sass', function(done) {
     .on('end', done);
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', ['sass'], function() {
 
-// browserSync.init({
-//   server: {
-//     baseDir: './www/'
-//   }
-// })
+browserSync.init({
+  server: {
+    baseDir: './www/'
+  },
+  port: 3001
+})
   gulp.watch(paths.sass, ['sass'])
     .on('change', function(event) {
-      // browserSync.reload();
+      browserSync.reload();
         console.log('File LOG' + event.path + ' was ' + event.type + ', running tasks...');
       });
 });
@@ -48,13 +49,6 @@ gulp.task('install', ['git-check'], function() {
     });
 });
 
-// gulp.task('sync', ['watch'], function() {
-//   browserSync.init({
-//     server: {
-//       baseDir: './'
-//     }
-//   })
-// })
 
 gulp.task('git-check', function(done) {
   if (!sh.which('git')) {
