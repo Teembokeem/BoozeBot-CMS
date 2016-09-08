@@ -1,12 +1,38 @@
-/* Empty. Add your own CSS if you like */
-/* Empty. Add your own CSS if you like */
+@font-face {
+	font-family: 'Oswald-light';
+	src: url('../fonts/Oswald-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source-sans-pro-Extralight';
+	src: url('../fonts/SourceSansPro-ExtraLight.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+
 .nopad {
     padding: 0;
     // color: white;
 }
 
+.pane {
+    background-color: rgb(240, 240, 240);
+
+    .scroll {
+        width: 100%;
+    }
+}
+
 body {
-    background-color: grey;
+    // background-color: grey;
+        // background-image: url('http://topvideochat.ro/wp-content/uploads/2015/12/2004726.jpg');
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-content: center;
 
     ui-view {
 
@@ -15,8 +41,6 @@ body {
         display: flex;
         justify-content: center;
         align-content: center;
-        // background-image: url('http://blog.hdwallsource.com/wp-content/uploads/2014/11/gradient-background-26046-26731-hd-wallpapers.jpg.png');
-        // background-position: bottom;
 
         * {
             font-family: Avenir;
@@ -28,9 +52,9 @@ body {
             height: 95%;
             width: 95%;
             margin:  auto;
+            box-shadow: 0 0 3em black;
             // border: 1px solid rgb(200, 200, 200);
             border-radius: 2em;
-            box-shadow: 0 0 2em black;
             overflow: hidden;
         }
 
@@ -42,8 +66,8 @@ body {
 
             .hero-component {
                 width: 10%;
-                border-right: 1px solid rgb(140, 140, 140);
-                background-color: rgb(51,59,83);
+                // border-right: 1px solid rgb(140, 140, 140);
+                background-color: rgb(51,51, 51);
                 
                 display: flex;
                 justify-content: center;
@@ -86,21 +110,28 @@ body {
                 // color: red;
                 width: 10%;
                 border-right: 1px solid rgb(45,67,102);
-                background-color: rgb(51,59,83);
+                background-color: rgb(51,51, 51);
 
                 menu {
                     width: 100%;
                     color: white;
+
+                    * {
+                        color: white;
+                        font-family: 'Source-sans-pro-Extralight';
+                        font-weight: 300;
+                        font-size: 1.1em;
+                    }
                     // font-weight: bold;
 
                     .menu-directive-view {
                         width: 100%;
-                        background-color: rgb(50,80,115);
+                        // background-color: rgb(50,80,115);
 
                         .menu-item {
                             padding-top: 0.5em;
-                            height: 3.5em;
-                            border-bottom: 1px solid rgb(45,67,102);
+                            height: 5em;
+                            // border-bottom: 1px solid rgb(45,67,102);
                             text-align: left;
                             padding-left: 1em;
                         }
@@ -113,7 +144,6 @@ body {
                 width: 90%;
                 height: 100%;
                 position: relative !important;
-                // border: 1px solid black;
             }
 
         }
@@ -122,7 +152,21 @@ body {
 
 }
 
-.content-title {
-    // color: red;
-    font-family: 'Oswald', sans-serif;
+content-title {
+    width: 100%;
+    // border: 1px solid lightgrey;
+    // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+
+    .title-row {
+        background-color: white;
+        border: 1px solid lightgrey;
+        width: 100%;
+        .content-title {
+            // color: red;
+            // font-family: 'Oswald-light';
+            font-weight: 300;
+        }
+    }
+
 }

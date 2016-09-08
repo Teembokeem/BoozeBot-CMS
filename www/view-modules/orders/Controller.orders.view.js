@@ -12,12 +12,12 @@
         $log.instantiate("Orders", "Controller");
         $log.info("Manager", OrderManager)
 
-        OrderManager
-            .getOrders()
-            .then(function(data) {
-                console.log("Data", data)
-                vm.orders = data
-            })
+        // OrderManager
+        //     .getOrders()
+        //     .then(function(data) {
+        //         console.log("Data", data)
+        //         vm.orders = data
+        //     })
 
         // OrderDispatcher
         //     .post({
