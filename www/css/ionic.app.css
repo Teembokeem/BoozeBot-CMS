@@ -9815,13 +9815,31 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-/* Empty. Add your own CSS if you like */
-/* Empty. Add your own CSS if you like */
+@font-face {
+  font-family: 'Oswald-light';
+  src: url("../fonts/Oswald-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Source-sans-pro-Extralight';
+  src: url("../fonts/SourceSansPro-ExtraLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
 .nopad {
   padding: 0; }
 
+.pane {
+  background-color: #f0f0f0; }
+  .pane .scroll {
+    width: 100%; }
+
 body {
-  background-color: grey; }
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center; }
   body ui-view {
     height: 95vh;
     width: 95%;
@@ -9835,16 +9853,15 @@ body {
       height: 95%;
       width: 95%;
       margin: auto;
+      box-shadow: 0 0 3em black;
       border-radius: 2em;
-      box-shadow: 0 0 2em black;
       overflow: hidden; }
     body ui-view .header-container {
       border-bottom: 2px solid black;
       height: 4%; }
       body ui-view .header-container .hero-component {
         width: 10%;
-        border-right: 1px solid #8c8c8c;
-        background-color: #333b53;
+        background-color: #333333;
         display: flex;
         justify-content: center; }
         body ui-view .header-container .hero-component span {
@@ -9867,17 +9884,20 @@ body {
       body ui-view .workspace-container .menu-component {
         width: 10%;
         border-right: 1px solid #2d4366;
-        background-color: #333b53; }
+        background-color: #333333; }
         body ui-view .workspace-container .menu-component menu {
           width: 100%;
           color: white; }
+          body ui-view .workspace-container .menu-component menu * {
+            color: white;
+            font-family: 'Source-sans-pro-Extralight';
+            font-weight: 300;
+            font-size: 1.1em; }
           body ui-view .workspace-container .menu-component menu .menu-directive-view {
-            width: 100%;
-            background-color: #325073; }
+            width: 100%; }
             body ui-view .workspace-container .menu-component menu .menu-directive-view .menu-item {
               padding-top: 0.5em;
-              height: 3.5em;
-              border-bottom: 1px solid #2d4366;
+              height: 5em;
               text-align: left;
               padding-left: 1em; }
       body ui-view .workspace-container .view-component {
@@ -9885,5 +9905,11 @@ body {
         height: 100%;
         position: relative !important; }
 
-.content-title {
-  font-family: 'Oswald', sans-serif; }
+content-title {
+  width: 100%; }
+  content-title .title-row {
+    background-color: white;
+    border: 1px solid lightgrey;
+    width: 100%; }
+    content-title .title-row .content-title {
+      font-weight: 300; }
