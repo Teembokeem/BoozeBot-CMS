@@ -9,7 +9,7 @@
    function contentTitle() {
  
      var directive = {
-         templateUrl: 'js/directives/contentTitle/contentTitle.directive.html',
+         templateUrl: 'core-modules/directives/content-title/content-title.directive.html',
          
          link: link,
          restrict: 'EA',
