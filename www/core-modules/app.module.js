@@ -1,5 +1,5 @@
 
-angular.module('BoozeBot-cms', ['ionic', 'Services'])
+angular.module('BoozeBot-cms', ['ionic', 'Services', 'Directives'])
 
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -10,7 +10,7 @@ angular.module('BoozeBot-cms', ['ionic', 'Services'])
   .state('booze', {
     url: '/',
     abstract: true,
-    templateUrl: '/templates/abstract.html',
+    templateUrl: '/core-modules/app.abstract.html',
     controller: 'AppCtrl',
     controllerAs: 'ac'
     // abstract: true;
@@ -56,6 +56,6 @@ angular.module('BoozeBot-cms', ['ionic', 'Services'])
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/orders');
+  $urlRouterProvider.otherwise('/dash');
 
 });
