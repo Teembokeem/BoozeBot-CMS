@@ -26,14 +26,7 @@
           controllerAs: 'ac'
           // abstract: true;
         })
-
-        .state('booze.profiles', {
-          url: '^/profiles',
-          templateUrl: '/templates/tab-profiles.html',
-          // controller: 'ProfilesCtrl',
-          // controllerAs: 'ac'
-        })
-
+        
         .state('booze.products', {
           url: '^/products',
           templateUrl: '/templates/tab-products.html',
