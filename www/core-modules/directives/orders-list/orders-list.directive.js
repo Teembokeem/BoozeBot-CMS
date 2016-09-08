@@ -9,7 +9,7 @@
    function ordersList() {
  
      var directive = {
-         templateUrl: 'js/directives/ordersList/ordersList.directive.html',
+         templateUrl: 'core-modules/directives/orders-list/orders-list.directive.html',
          
          link: link,
          restrict: 'EA',
