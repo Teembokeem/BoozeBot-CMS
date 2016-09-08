@@ -2,7 +2,7 @@
 'use strict';
 
   angular
-    .module('Boom.api.module')
+    .module('Orders.api.module')
     .factory('Schema', Schema);
 
   Schema.$inject = ['Requester'];
