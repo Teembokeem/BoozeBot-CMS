@@ -15,15 +15,39 @@
     <script src="core-modules/app.module.js"></script>
     <script src="core-modules/app.controller.js"></script>
 
-      <!--DIRECTIVES-->
-      <script src="core-modules/directives/directives.module.js"></script>
-      <script src="core-modules/directives/content-title/content-title.directive.js"></script>
-      <script src="core-modules/directives/menu/menu.directive.js"></script>
-      <script src="core-modules/directives/orders-list/orders-list.directive.js"></script>
+        <!--CONFIGS-->
+        <script src="core-modules/configs/configs.module.js"></script>
+        <script src="core-modules/configs/log.config.js"></script>
 
-      <!--SERVICES-->
-      <script src="core-modules/services/services.module.js"></script>
-      <script src="core-modules/services/storage.service.js"></script>
+
+        <!--DIRECTIVES-->
+        <script src="core-modules/directives/directives.module.js"></script>
+        <script src="core-modules/directives/content-title/content-title.directive.js"></script>
+        <script src="core-modules/directives/menu/menu.directive.js"></script>
+        <script src="core-modules/directives/orders-list/orders-list.directive.js"></script>
+
+        <!--SERVICES-->
+        <script src="core-modules/services/services.module.js"></script>
+        <script src="core-modules/services/storage.service.js"></script>
+
+
+    <!--APIS -->
+    <script src="api-modules/api.base.module.js"></script>
+
+        <!--BASELINE DEPS-->
+        <script src="api-modules/url.service.js"></script>
+
+        <!--BOOM -->
+        <script src="api-modules/boom/Module.boom.api.js"></script>
+        <script src="api-modules/boom/Config.boom.api.js"></script>
+        <script src="api-modules/boom/Data.boom.api.js"></script>
+        <script src="api-modules/boom/Manager.boom.api.js"></script>
+        <script src="api-modules/boom/Requester.boom.api.js"></script>
+        <script src="api-modules/boom/Schema.boom.api.js"></script>
+
+    <!--VIEW MODULES-->
+
+
 
   </head>
  <body>
@@ -39,7 +63,6 @@
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
-    sup dude
     <ui-view></ui-view>
 
   </body>
