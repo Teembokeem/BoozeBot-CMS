@@ -12,7 +12,8 @@
                 url: '^/orders',
                 templateUrl: '/view-modules/orders/orders.html',
                 controller: 'OrdersCtrl',
-                controllerAs: 'vc'
+                controllerAs: 'vc',
+                contentTitle: 'Orders'
             })
 
     });
