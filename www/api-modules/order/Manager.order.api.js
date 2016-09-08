@@ -6,27 +6,59 @@
     .module('Order.api.module')
     .factory('OrderManager', OrderManager);
 
-  OrderManager.$inject = ['OrderRequester', 'OrderSchema', 'Orders', 'storage'];
-  function OrderManager(OrderRequester, OrderSchema, Orders, storage) {
+  OrderManager.$inject = ['OrderDispatcher', 'OrderSchema', 'storage'];
+  function OrderManager(OrderDispatcher, OrderSchema, storage) {
     var service = {
       Orders : Orders,
-      makeOrders: makeOrders,
+      transformOrders: transformOrders,
+      createOrder: createOrder,
       removeOrders: removeOrders,
-      getOrders: getOrders
+      getOrders: getOrders,
+      updateOrder: updateOrder,
+      deleteOrder: deleteOrder,
     };
-    
+        
+    var Schema = {
+      status: 0,
+      products: [],
+      qty: [],
+      total: 0
+    };
     return service;
 
     ////////////////
-    function makeOrders(arr) {
+    function transformOrders(arr) {
       if (!Array.isArray(arr)) {
         return new OrderSchema(arr);
       }
       var Orders = [];
       for (var i = 0; i < arr.length; i++) {
-        Orders.push(new OrderSchema(arr[i], i));
+        Orders.push(newOrder(arr[i], i));
       }
       return Orders;
+    }
+
+    function newOrder(order, index) {
+      return new OrderSchema(order, index);
+    }
+
+    function createOrder(order) {
+      OrderDispatcher.post(order)
+    }
+
+    function updateOrder(order, updates) {
+      var index = order._index;
+      return OrderDispatcher.update(order, updates).then(function(newOrder) {
+        newOrder = newOrder(newOrder, index);
+        service.Orders[index] = new OrderSchema(newOrder, index);
+        return newOrder;
+      }) 
+    }
+
+    function deleteOrder(order) {
+      return OrderDispatcher.destroy(order).then(function(done) {
+        return done
+      })
     }
 
     function setOrders(Orders) {
@@ -43,7 +75,7 @@
 
 
     function getOrders() {
-      return OrderRequester.get().then(makeOrders).then(setOrders);
+      return OrderDispatcher.get().then(transformOrders).then(setOrders);
     }
 
     function removeOrders(Orders) {
