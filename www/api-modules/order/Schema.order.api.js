@@ -7,7 +7,7 @@
 
   OrderSchema.$inject = [];
   function OrderSchema() {
-    
+  
     function Order(order, index) {
       for (var i in order) {
         this[i] = order[i];
@@ -17,6 +17,8 @@
       this._index = index;
       return this;
     }
+
+
 
     // function countUpvotes(boom) {
     //   if (!boom.upvotes) {
