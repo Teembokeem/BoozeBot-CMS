@@ -12,7 +12,8 @@
                 url: '^/dash',
                 templateUrl: '/view-modules/dash/dash.html',
                 controller: 'DashCtrl',
-                controllerAs: 'vc'
+                controllerAs: 'vc',
+                contentTitle: 'Dashboard'
             })
 
     });
