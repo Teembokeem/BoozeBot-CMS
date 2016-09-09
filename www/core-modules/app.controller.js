@@ -1,22 +1,16 @@
 angular.module('BoozeBot-cms')
 
 .controller('AppCtrl', function($scope, $state, $rootScope, $log) {
-  console.log('Loaded!');
-  // Manager.getBooms().then(function(data) {
-  //   console.log('DATA', data);
-  // })
-  
-  // $scope.$on()
+  $log.instantiate('App', 'Controller');
 
-  $log.info("app controller laoded!!!")
   var vm = this;
-  console.log("SUH DUDE", $rootScope)
+  vm.contentTitle = $state.current.contentTitle;
 
-  $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams) {
+  $rootScope.$on('$stateChangeStart', function(evt, toState, toParams, fromState, fromParams, $state) {
         $log.info('Traveling to ' + toState.url, toState);
         // $rootScope.contentTitle = ;
-  vm.contentTitle = toState.contentTitle
-        console.log("your root scope", $rootScope.contentTitle)
+        vm.contentTitle = toState.contentTitle
+
 
         $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
           event.preventDefault();
