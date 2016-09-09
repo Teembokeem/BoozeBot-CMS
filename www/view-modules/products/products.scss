@@ -1,0 +1,24 @@
+.products-view {
+    products-list {
+        .products-list-directive-view {
+            // background-color: rgb(51,51, 51);
+            text-align: center;
+            padding: 2em;
+            *.product-box {
+                background-color: white;
+                border: 1px solid lightgrey;
+                border-radius: 0.5em;
+                // box-shadow: 0 0 0.2em black;
+                // color: white;
+
+                :hover {
+                    background-color: light-grey;
+                }
+            }
+        }
+
+        .product-show-directive-view { 
+
+        }
+    }
+}
