@@ -9,7 +9,7 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 
 var paths = {
-  sass: ['./www/views/main/**/*.scss', './www/css/*.scss', './www/**/*', './www/**/**/*' ]
+  sass: ['./www/views/main/**/*.scss', './www/css/*.scss', './www/**/*', './www/**/**/*', '!./www/css/ionic.*' ]
 };
 
 gulp.task('default', ['watch']);
