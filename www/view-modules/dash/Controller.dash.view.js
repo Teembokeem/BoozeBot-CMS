@@ -5,10 +5,10 @@
         .module('Dash.view.module')
         .controller('DashCtrl', DashCtrl);
     
-    DashCtrl.$inject = ['$log', 'Manager'];
+    DashCtrl.$inject = ['$log', 'OrderManager'];
 
-    function DashCtrl($log, Manager) {
+    function DashCtrl($log, OrderManager) {
         $log.instantiate("Dash", "Controller");
-        $log.info("Manager", Manager)
+        $log.info("OrderManager", OrderManager)
     }
 })();
