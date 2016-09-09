@@ -26,6 +26,11 @@
     }
 }
 
+.col {
+    // width: 33% !important;
+    padding: 1em;
+}
+
 body {
     // background-color: grey;
         // background-image: url('http://topvideochat.ro/wp-content/uploads/2015/12/2004726.jpg');
@@ -59,7 +64,7 @@ body {
         }
 
         .header-container {
-            border-bottom: 2px solid black;
+            border-bottom: 1px solid lightgrey;
             height: 4%;
 
 

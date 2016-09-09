@@ -9835,6 +9835,9 @@ a.button {
   .pane .scroll {
     width: 100%; }
 
+.col {
+  padding: 1em; }
+
 body {
   background-size: cover;
   display: flex;
@@ -9857,7 +9860,7 @@ body {
       border-radius: 2em;
       overflow: hidden; }
     body ui-view .header-container {
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid lightgrey;
       height: 4%; }
       body ui-view .header-container .hero-component {
         width: 10%;
@@ -9913,3 +9916,13 @@ content-title {
     width: 100%; }
     content-title .title-row .content-title {
       font-weight: 300; }
+
+.products-view products-list .products-list-directive-view {
+  text-align: center;
+  padding: 2em; }
+  .products-view products-list .products-list-directive-view *.product-box {
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 0.5em; }
+    .products-view products-list .products-list-directive-view *.product-box :hover {
+      background-color: light-grey; }
