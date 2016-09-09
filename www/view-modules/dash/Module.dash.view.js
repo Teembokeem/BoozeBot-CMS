@@ -1,8 +1,8 @@
 (function() {
   'use strict';
 
-  angular.module('Dash.view.module', ['Boom.api.module'])
-    .run(function($log) {
-        $log.info("")
-    }); 
+  angular.module('Dash.view.module', ['Order.api.module'])
+    // .run(function($log) {
+    //     $log.info("")
+    // }); 
 })();
