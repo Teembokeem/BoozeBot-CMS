@@ -2,12 +2,18 @@
     'use strict'
 
 
+    
+
     angular.module('Orders.view.module')
 
 
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(routes);
 
-        $stateProvider
+
+    routes.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function routes($poop, $urlRouterProvider) {
+
+        $poop
             .state('booze.orders', {
                 url: '^/orders',
                 templateUrl: '/view-modules/orders/orders.html',
@@ -15,7 +21,6 @@
                 controllerAs: 'vc',
                 contentTitle: 'Orders'
             })
-
-    });
+    }
 
 })();
