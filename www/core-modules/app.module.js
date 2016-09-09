@@ -9,7 +9,8 @@
       'Dash.view.module',
       'Orders.view.module',
       'Sales.view.module',
-      'Profiles.view.module'
+      'Profiles.view.module',
+      'Products.view.module'
     ])
 
 
@@ -26,19 +27,7 @@
           controllerAs: 'ac'
           // abstract: true;
         })
-        
-        .state('booze.products', {
-          url: '^/products',
-          templateUrl: '/templates/tab-products.html',
-          // controller: 'ProductsCtrl',
-          // controllerAs: 'ac'
-        })
 
-
-      // Each tab has its own nav history stack:
-
-
-      // if none of the above states are matched, use this as the fallback
       $urlRouterProvider.otherwise('/dash');
 
     });
