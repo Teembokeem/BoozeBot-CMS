@@ -63,17 +63,17 @@
     }
 
     function setProducts(Products) {
-      // Products.set(Products);
       writeProducts(Products);
       service.Products = Products;
       return service.Products;
     }
 
-        function writeProducts(Products) {
+    function writeProducts(Products) {
+        // TODO: change this to Product Storage system using namespaces instead of localStorage
         localStorage.setItem('Products', JSON.stringify(Products));
-        }
+    }
 
-
+    
 
     function getProducts() {
         service.Products = ProductDispatcher.get().then(transformProducts).then(setProducts); 
