@@ -12,6 +12,8 @@
         $log.instantiate("Orders", "Controller");
         $log.info("Manager", OrderManager)
 
+
+        vm.orders = OrderManager.orders;
         // OrderManager
         //     .getOrders()
         //     .then(function(data) {
