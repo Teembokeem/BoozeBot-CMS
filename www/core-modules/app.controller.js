@@ -17,39 +17,4 @@ angular.module('BoozeBot-cms')
           $log.error("your state error", error)
         })
   })
-
-  vm.orders = [
-    {
-      name: 'Ben',
-      total: 35.00,
-      status: "PD" 
-    },
-    {
-      name: 'Adam',
-      total: 35.00,
-      status: "AS" 
-    },
-    {
-      name: 'Craig',
-      total: 35.00,
-      status: "AC" 
-    },
-    {
-      name: 'Ben',
-      total: 35.00,
-      status: "PD" 
-    },
-    {
-      name: 'Adam',
-      total: 35.00,
-      status: "IP" 
-    },
-    {
-      name: 'Craig',
-      total: 35.00,
-      status: "CP" 
-    }
-  ]
-
-  console.log("suh dude", vm.orders)
 });
