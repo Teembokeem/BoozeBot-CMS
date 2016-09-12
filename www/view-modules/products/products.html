@@ -1,9 +1,9 @@
 <ion-view view-title="Products">
   <ion-content class="products-view padding">
+      {{vc.stateHandler}}
         <content-title title="{{ac.contentTitle}}"></content-title>
-      <!--{{vc.products}}-->
-        <products-list ng-show="{{vc.stateHandler === 'booze.products'}}" products={{vc.products}}></products-list>
-        <product-show ng-show="{{vc.stateHandler === 'booze.products.show'}}" product={{vc.product}}></product-show>
+        <products-list ng-show="vc.stateHandler === 'booze.products'" select="vc.select" products="vc.products"></products-list>
+        <product-show ng-show="vc.stateHandler === 'booze.products.show'" exit="vc.deselect" product="vc.product"></product-show>
   </ion-content>
 </ion-view>
 

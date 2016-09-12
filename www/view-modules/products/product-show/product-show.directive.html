@@ -1,6 +1,44 @@
 <br>
 <div class="product-show-directive-view container">
    <div class="products-container">
-       sup
+       <div class="products-container">
+       <button ng-click="dc.exit()">X</button>
+       <div class="row">
+           <div class="col-20 col">
+               <div class="product-box container">
+                   <div class="row">
+                       <div class=" col">
+                            <img ng-src="{{product['image']}}" alt="">
+                            <button ng-if="!dc.showEdit" ng-click="dc.edit(product)">Edit</button>
+                            <button ng-if="dc.showEdit" ng-click="dc.edit(product)">Cancel</button>
+                            <button ng-if="dc.showEdit" ng-click="product.update(dc.product)">Update</button>
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col">
+                            {{product['Description']}}
+                       </div>
+                   </div>
+
+                   <!-- THESE SHOULD ALL BE A toggle-edit directive -->
+                   <div class="row">
+                       <div class="col">
+                            Description: <span ng-if="!dc.showEdit"> {{product['Description']}}</span>
+                                         <input ng-if="dc.showEdit" ng-model="dc.product.Description">
+                       </div>
+                       <div class="col">
+                            Price: {{product['Price']}}
+                       </div>
+                       <div class="col">
+                            Category: {{product['Category']}}
+                       </div>
+                       <div class="col">
+                            Qty: {{product['Qty']}}
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
    </div>
 </div>

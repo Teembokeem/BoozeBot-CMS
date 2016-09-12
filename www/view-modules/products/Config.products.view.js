@@ -28,6 +28,7 @@
 
             .state('booze.products.show', {
                 url: '^/:name',
+                // templateUrl: '/view-modules/products/products.html',
                 // resolve: {
                 //     products : function($q, ProductManager) {
                 //         console.log('Providing!')

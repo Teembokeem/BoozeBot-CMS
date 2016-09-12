@@ -7,7 +7,8 @@
     
     .run(function($log, ProductManager, storage) {
         if (localStorage.getItem('Products')) {
-            ProductManager.Products = JSON.parse(localStorage.getItem('Products'));
+            // Transform the products so they have the prototype
+            ProductManager.Products = ProductManager.transformProducts(JSON.parse(localStorage.getItem('Products')));
         } else {
             ProductManager.Products.then(function(data) {
                 console.log('I have the Products!!!!!!!!')

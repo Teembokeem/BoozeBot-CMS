@@ -1,0 +1,22 @@
+<div class="orders-list-directive-view container">
+   <div class="orders-container">
+       <div class="row">
+           <div ng-repeat="order in orders" class="col-20 col">
+               <div class="order-box container">
+                   <div class="row">
+                       <div class=" col">
+                            Name: {{order.name}}
+                       </div>
+                       <div class="col">
+                            Totoal: {{order.total}}
+                       </div>
+
+                       <div class="col">
+                            Status: {{order['status']}}
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>

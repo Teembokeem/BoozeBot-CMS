@@ -1,0 +1,22 @@
+<br>
+<div class="products-list-directive-view container">
+   
+   <div class="products-container">
+       <div class="row">
+           <div ng-repeat="product in products | limitTo:50" ng-click="select(product)" class="col-20 col">
+               <div class="product-box container">
+                   <div class="row">
+                       <div class=" col">
+                            <img ng-src="{{product['image']}}" alt="">
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="col">
+                            {{product['Description']}}
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
