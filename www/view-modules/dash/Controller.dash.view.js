@@ -12,14 +12,21 @@
         $log.instantiate("Dash", "Controller");
         $log.info("OrderManager", OrderManager)
         var orders = OrderManager.orders;
-        vc.orderNums = [0, 0, 0, 0, 0];
+        vc.pieNums = [0, 0, 0, 0, 0];
+        vc.series = [
+            "Pending",
+            "Assigned",
+            "Accepted",
+            "In Progress",
+            "Completed"
+        ];
         for (var i = 0; i < orders.length; i++) {
             var order = orders[i],
                 index = statusEnum.indexOf(order.status);
-            vc.orderNums[index]++;
+            vc.pieNums[index]++;
         }
 
-        console.log('NUMS', vc.orderNums)
+        console.log('NUMS', vc.pieNums)
 
         vc.labels = statusEnum;
 

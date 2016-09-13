@@ -1,5 +1,5 @@
 <ion-view view-title="Orders">
-  <ion-content class="padding">
+  <ion-content class="padding orders-view">
         <content-title title="{{ac.contentTitle}}"></content-title>
         <orders-list ng-if="vc.stateHandler == 'booze.orders'" select="vc.select" orders="vc.orders"></orders-list>
         <order-show ng-if="vc.stateHandler == 'booze.orders.show'" exit="vc.deselect" order="vc.order"></order-show>

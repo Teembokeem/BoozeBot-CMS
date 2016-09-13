@@ -1,0 +1,21 @@
+.orders-view {
+    orders-list {
+        .orders-list-directive-view {
+            .orders-container {
+                width: 100%;
+
+                .tab-container {
+                    width: 100%;
+                    
+
+                    .tab-filter {
+                        width: 100%;
+                        border: 1px solid lightgrey;
+                        border-radius: 0.5em;
+                    }
+                }
+            }
+        }
+
+    }
+}
