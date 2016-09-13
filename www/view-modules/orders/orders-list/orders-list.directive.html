@@ -1,7 +1,24 @@
 <div class="orders-list-directive-view container">
    <div class="orders-container">
-       <div class="row">
-           <div ng-repeat="order in orders" class="col-20 col">
+       <div class="row tab-container">
+           <div ng-click="vc.filter = 'Pending'" class="col-20 col tab-filter">
+               Pending {{(orders | filter:{'status':'Pending'}).length }}
+           </div>
+           <div ng-click="vc.filter = 'Assigned'" class="col-20 col tab-filter">
+               Assigned {{(orders | filter:{'status':'Assigned'}).length }}
+           </div>
+           <div ng-click="vc.filter = 'Progress'" class="col-20 col tab-filter">
+               In Progress {{(orders | filter:{'status':'In Progress'}).length }}
+           </div>
+           <div ng-click="vc.filter = 'Accepted'" class="col-20 col tab-filter">
+               Accepted {{(orders | filter:{'status':'Accepted'}).length }}
+           </div>
+           <div ng-click="vc.filter = 'Completed'" class="col-20 col tab-filter">
+               Completed {{(orders | filter:{'status':'Completed'}).length }}
+           </div>
+       </div>
+       <div class="row orders-container">
+           <div ng-repeat="order in orders | filter:{'status': vc.filter}" class="col">
                <div class="order-box container">
                    <button ng-click="select(order)" class="row">
                        <span class="">

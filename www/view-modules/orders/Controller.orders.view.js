@@ -23,5 +23,7 @@
             vc.order = null;
             vc.stateHandler = 'booze.orders';
         };
+
+        vc.filter = 'Pending';
     }
 })();
