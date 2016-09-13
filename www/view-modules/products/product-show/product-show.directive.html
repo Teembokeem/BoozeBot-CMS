@@ -1,44 +1,70 @@
 <br>
 <div class="product-show-directive-view container">
-   <div class="products-container">
-       <div class="products-container">
-       <button ng-click="dc.exit()">X</button>
-       <div class="row">
-           <div class="col-20 col">
-               <div class="product-box container">
-                   <div class="row">
-                       <div class=" col">
-                            <img ng-src="{{product['image']}}" alt="">
-                            <button ng-if="!dc.showEdit" ng-click="dc.edit(product)">Edit</button>
-                            <button ng-if="dc.showEdit" ng-click="dc.edit(product)">Cancel</button>
-                            <button ng-if="dc.showEdit" ng-click="product.update(dc.product)">Update</button>
-                       </div>
-                   </div>
-                   <div class="row">
-                       <div class="col">
-                            {{product['Description']}}
-                       </div>
-                   </div>
+    <br>
+    {{product}}
+    <div class="row">
+        <div class="col product-show-header">
+            {{product['Description']}}
 
-                   <!-- THESE SHOULD ALL BE A toggle-edit directive -->
-                   <div class="row">
-                       <div class="col">
-                            Description: <span ng-if="!dc.showEdit"> {{product['Description']}}</span>
-                                         <input ng-if="dc.showEdit" ng-model="dc.product.Description">
-                       </div>
-                       <div class="col">
-                            Price: {{product['Price']}}
-                       </div>
-                       <div class="col">
-                            Category: {{product['Category']}}
-                       </div>
-                       <div class="col">
-                            Qty: {{product['Qty']}}
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-   </div>
+        </div>
+    </div>
+    <br>
+    <div class="row product-show-options">
+        <div class="col-33">
+             <button class="back-button" ng-click="dc.exit()">Back</button>
+        </div>
+        <div class="col-33">
+            <button ng-if="!dc.showEdit" ng-click="dc.edit(product)">Edit</button>
+            <button ng-if="dc.showEdit" ng-click="dc.edit(product)">Cancel</button>
+            <button ng-if="dc.showEdit" ng-click="product.update(dc.product)">Update</button>
+        </div>
+        <div class="col-33">
+             <button class="back-button" ng-click="dc.exit()">X</button>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-40 col product-box">
+            <div class="row">
+                <div class="col">
+                    <img ng-src="{{product['image']}}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="col-50 col description-container">
+            <div class="row">
+                <br>
+                <div class="col title">
+                    Description:
+                </div>
+                <div class="col description">
+                     <span ng-if="!dc.showEdit"> {{product['Description']}}</span>
+                     <input ng-if="dc.showEdit" ng-model="dc.product.Description">
+                </div>
+                <div class="col title">
+                    Price:
+                </div>
+                <div class="col price">
+                     <span ng-if="!dc.showEdit"> {{product['Price']}}</span>
+                     <input ng-if="dc.showEdit" ng-model="dc.product.Price">
+                </div>
+                <div class="col title">
+                    Category:
+                </div>
+                <div class="col category">
+                     <span ng-if="!dc.showEdit"> {{product['Category']}}</span>
+                     <input ng-if="dc.showEdit" ng-model="dc.product.Category">
+                </div>
+                <div class="col title">
+                    Quantity:
+                </div>
+                <div class="col qty">
+                    <span ng-if="!dc.showEdit"> {{product['Qty']}}</span>
+                    <input ng-if="dc.showEdit" ng-model="dc.product.Qty">
+                </div>
+            </div>
+            <!-- THESE SHOULD ALL BE A toggle-edit directive -->
+        </div>
+
+    </div>
 </div>
