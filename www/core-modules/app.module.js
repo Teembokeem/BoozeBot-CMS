@@ -9,6 +9,7 @@
       'Dash.view.module',
       'Orders.view.module',
       'Sales.view.module',
+      'Shop.view.module',
       'Profiles.view.module',
       'Products.view.module'
     ])
@@ -26,10 +27,10 @@
           controller: 'AppCtrl',
           controllerAs: 'ac'
           // abstract: true;
-        })
+        });
 
       $urlRouterProvider.otherwise('/dash');
 
-    });
+    })
 
 })();

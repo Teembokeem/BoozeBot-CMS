@@ -1,0 +1,15 @@
+<br>
+<!--TODO: remove style on div tag-->
+<div class="booze-item-directive-view container" style="padding: 5px;">
+   <img  ng-src="{{item.image}}">
+   {{ item.Description }}
+   ${{ item.Price }}
+   <ngcart-addtocart 
+        id="{{ item._id }}" 
+        name="{{ item.Description }}" 
+        price="{{ item.Price }}" 
+        quantity="1" 
+        quantity-max="{{ item.Qty }}" 
+        data="item"
+    ><button>Add To Cart</button></ngcart-addtocart>
+</div>

@@ -8,10 +8,23 @@
     <!--SCSS-->
     <link href="css/ionic.app.css" rel="stylesheet">
 
+
+<style type="text">
+    .ngCart.cart span[ng-click] {
+        cursor: pointer;
+    }
+    .ngCart.cart .glyphicon.disabled {
+        color:#aaa;
+    }
+</style>
+
     <!--<script src="lib/fusioncharts.charts.js"></script>-->
 
     <!-- IONIC ANGULAR -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!--CART-->
+    <script src="lib/ngcart/dist/ngCart.js"></script>
 
     <!-- CHARTS -->
     <script src="lib/chartjs/chart.js/dist/Chart.min.js"></script>
@@ -35,6 +48,8 @@
         <!--SERVICES-->
         <script src="core-modules/services/services.module.js"></script>
         <script src="core-modules/services/storage.service.js"></script>
+        <script src="core-modules/services/cart/cart.module.js"></script>
+        <script src="core-modules/services/cart/cart.service.js"></script>
 
 
     <!--API MODULES-->
@@ -76,6 +91,14 @@
         <script src="view-modules/sales/Module.sales.view.js"></script>
         <script src="view-modules/sales/Config.sales.view.js"></script>
         <script src="view-modules/sales/Controller.sales.view.js"></script>
+
+        <!--SHOP-->
+        <script src="view-modules/shop/Module.shop.view.js"></script>
+        <script src="view-modules/shop/booze-cart/booze-cart.directive.js"></script>
+        <script src="view-modules/shop/browse-item/booze-item/booze-item.directive.js"></script>
+        <script src="view-modules/shop/browse-item/browse-item.directive.js"></script>
+        <script src="view-modules/shop/Config.shop.view.js"></script>
+        <script src="view-modules/shop/Controller.shop.view.js"></script>
 
         <!-- PROFILES -->
         <script src="view-modules/profiles/Module.profiles.view.js"></script>
