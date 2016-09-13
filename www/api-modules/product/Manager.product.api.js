@@ -17,6 +17,7 @@
       getProducts: getProducts,
       updateProduct: updateProduct,
       deleteProduct: deleteProduct,
+      findById: findById
     };
         
     var Schema = {
@@ -28,6 +29,17 @@
     return service;
 
     ////////////////
+    function findById(id) {
+        var prod;
+        for (var i = 0; i < service.Products.length; i++) {
+            prod = service.Products[i];
+            if (prod._id == id) {
+                return prod;
+            }
+        }
+        return false;
+    }
+
     function transformProducts(arr) {
       if (!Array.isArray(arr)) {
         return new ProductSchema(arr);

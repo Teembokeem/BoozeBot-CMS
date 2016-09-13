@@ -1,0 +1,33 @@
+<br>
+<br>
+<div class="order-status-directive-view container">
+    <div class="row">
+        <!-- Can only assign Order-->
+        <div ng-if="order.status == 'Pending'">
+            <span>
+                Selcet Driver To Assign: 
+                <select ng-model="driver">
+                    <option value="Sarah Marshall">Sarah Marshall</option>
+                    <option value="Marky Mark">Marky Mark</option>
+                    <option value="Tom Cruise">Tom Cruise</option>
+                </select>
+                <button ng-click="dc.assign(order, driver)">Assign</button>
+        </div>
+        
+        <!-- Can Accept Or Decline Order -->
+        <div ng-if="order.status == 'Assigned'">
+            <button ng-click="dc.accept(order)">Accept</button>
+            <button ng-click="dc.decline(order)">Decline</button>
+        </div>
+        
+        <!-- Can start delivering Order-->
+        <div ng-if="order.status == 'Accepted'">
+            <button ng-click="dc.start(order)">Start</button>
+        </div>
+        
+        <!-- Can Deliver Order -->
+        <div ng-if="order.status == 'In Progress'">
+            <button ng-click="dc.complete(order)">Complete!</button>
+        </div>
+    </div>
+</div>

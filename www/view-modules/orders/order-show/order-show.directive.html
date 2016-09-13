@@ -5,7 +5,7 @@
             <button ng-click="dc.exit()">X</button>
             <div class="row">
                 <div class="col">
-                    Name: {{order.name}}
+                    Name: {{order.name}} <button ng-click="dc.destroy(order)">Delete</button>
                 </div>
                 <div class="col">
                     Total: $<span ng-if="!dc.showEdit"> {{order.total}}</span>
@@ -19,11 +19,29 @@
                     Driver: <span ng-if="!dc.showEdit"> {{order.driver || 'Not Assigned'}}</span>
                            <input ng-if="dc.showEdit" ng-model="dc.order.driver">
                 </div>
+                <div class="col">
+                    Products: 
+                    <div ng-repeat="prod in order.products">
+                        <button ng-click="order.removeProd(prod)">Delete</button>
+                        <img style="height: 30px; width: 20px" ng-src="{{prod.image}}">
+                        <span ng-if="!dc.showEdit">{{prod.Description}} - {{order.qty[prod._id]}}</span>
+                        Description: <input ng-if="dc.showEdit" ng-model="prod.Description">
+                        Price: <input ng-if="dc.showEdit" ng-model="prod.Price">
+                        Qty: <input ng-if="dc.showEdit" ng-model="order.qty[prod._id]">
+                    </div>
+                </div>
+                <div class="col">
+                    Total: <span ng-if="!dc.showEdit"> {{order.total}}</span>
+                           <input ng-if="dc.showEdit" ng-model="order.total">
+
+                           <button ng-click="order.calcTotal()">Update Total</button>
+                </div>
             </div>
             <div>
                 <button ng-click="dc.edit(order)">{{dc.showEdit ? "Cancel" : "Edit"}}</button>
-                <button ng-if="dc.showEdit" ng-click="order.update(dc.order)">Update</button>
+                <button ng-if="dc.showEdit" ng-click="dc.update(order, dc.order)">Update</button>
             </div>
+            <order-status exit="dc.exit" order="order"></order-status>
         </div>
    </div>
 </div>

@@ -11,7 +11,8 @@
         console.warn("STOERD IN LOCAL, make sure to call server");
         ProductManager.products = ProductManager.store.getItem();
       } else {
-          ProductManager.getProducts();
+        //   ProductManager.getProducts();
+        ProductManager.Products = ProductManager.transformProducts(JSON.parse(localStorage.getItem('Products')));
       }
     });
 })();
