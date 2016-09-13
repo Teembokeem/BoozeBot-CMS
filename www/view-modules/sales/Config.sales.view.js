@@ -14,7 +14,7 @@
                 controller: 'SalesCtrl',
                 controllerAs: 'vc',
                 contentTitle: 'Sales'
-            })
+            });
 
     });
 

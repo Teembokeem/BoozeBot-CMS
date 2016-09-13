@@ -5,7 +5,7 @@
   angular.module('Sales.view.module', ['Order.api.module'])
     
     
-    // .run(function($log) {
-    //     $log.info("")
-    // }); 
+    .run(function($log) {
+        
+    }); 
 })();
