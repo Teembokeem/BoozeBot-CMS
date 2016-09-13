@@ -3,18 +3,18 @@
        <div class="row">
            <div ng-repeat="order in orders" class="col-20 col">
                <div class="order-box container">
-                   <div class="row">
-                       <div class=" col">
+                   <button ng-click="select(order)" class="row">
+                       <span class="">
                             Name: {{order.name}}
-                       </div>
-                       <div class="col">
+                       </span>
+                       <span class="">
                             Totoal: {{order.total}}
-                       </div>
+                       </span>
 
-                       <div class="col">
+                       <span class="">
                             Status: {{order['status']}}
-                       </div>
-                   </div>
+                       </span>
+                   </button>
                </div>
            </div>
        </div>

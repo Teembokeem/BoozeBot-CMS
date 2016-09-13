@@ -13,12 +13,11 @@
         this[i] = order[i];
       }
       
+      this.status = statusEnum[this.status];
       // countUpvotes(this);
       this._index = index;
       return this;
     }
-
-
 
     // function countUpvotes(boom) {
     //   if (!boom.upvotes) {
@@ -44,8 +43,17 @@
     Order.prototype.upvote = function() {
       console.log('UPVOTES');
       return this;
-    }
+    };
 
     return Order;
   }
+
+//   Translator from number to status as text
+  var statusEnum = [
+      "Pending",
+      "Assigned",
+      "Accepted",
+      "In Progress",
+      "Completed"
+  ];
 })();

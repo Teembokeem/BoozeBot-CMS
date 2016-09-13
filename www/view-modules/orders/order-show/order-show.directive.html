@@ -1,0 +1,29 @@
+<br>
+<div class="order-show-directive-view container">
+   <div class="orders-container">
+       <div class="orders-container">
+            <button ng-click="dc.exit()">X</button>
+            <div class="row">
+                <div class="col">
+                    Name: {{order.name}}
+                </div>
+                <div class="col">
+                    Total: $<span ng-if="!dc.showEdit"> {{order.total}}</span>
+                           <input ng-if="dc.showEdit" ng-model="dc.order.total">
+                </div>
+                <div class="col">
+                    Status: <span ng-if="!dc.showEdit"> {{order.status}}</span>
+                           <input ng-if="dc.showEdit" ng-model="dc.order.status">
+                </div>
+                <div class="col">
+                    Driver: <span ng-if="!dc.showEdit"> {{order.driver || 'Not Assigned'}}</span>
+                           <input ng-if="dc.showEdit" ng-model="dc.order.driver">
+                </div>
+            </div>
+            <div>
+                <button ng-click="dc.edit(order)">{{dc.showEdit ? "Cancel" : "Edit"}}</button>
+                <button ng-if="dc.showEdit" ng-click="order.update(dc.order)">Update</button>
+            </div>
+        </div>
+   </div>
+</div>

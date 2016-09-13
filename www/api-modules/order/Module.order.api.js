@@ -8,41 +8,48 @@
             {
             name: 'Ben',
             total: 35.00,
-            status: "PD" 
+            driver: '',
+            status: 0 //"Pending" 
             },
             {
             name: 'Adam',
             total: 35.00,
-            status: "AS" 
+            driver: 'Tom',
+            status: 1 //"Assigned" 
             },
             {
             name: 'Craig',
             total: 35.00,
-            status: "AC" 
+            driver: 'Amar',
+            status: 2 // "Accepted" 
             },
             {
             name: 'Ben',
             total: 35.00,
-            status: "PD" 
+            driver: '',
+            status: 0 //"Pending" 
             },
             {
             name: 'Adam',
             total: 35.00,
-            status: "IP" 
+            driver: 'Tom',
+            status: 3 // "In Progress" 
             },
             {
             name: 'Craig',
             total: 35.00,
-            status: "CP" 
+            driver: 'Tom',
+            status: 4 // "Completed" 
             }
         ];
 
       OrderManager.store = new storage('orders');
-      console.log('namespace', OrderManager.namespace)
+      console.log('namespace', OrderManager.store);
       if (OrderManager.store.getItem()) {
         OrderManager.orders = OrderManager.store.getItem();
       } else {
         // OrderManager.getOrders();
+        console.warn('Ordermanager still using seeded data');
         OrderManager.orders = OrderManager.transformOrders(seedOrders);
       }
     });
