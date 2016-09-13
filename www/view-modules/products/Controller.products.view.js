@@ -19,16 +19,16 @@
             vc.stateHandler = 'booze.products.show';
             vc.product = product;
             console.log('PRODUCT', vc.product);
-        }
+        };
 
         vc.deselect = function() {
             vc.product = null;
             vc.stateHandler = 'booze.products';
-        }
+        };
 
         vc.updateState = function(name) {
             vc.stateHandler = name;
-        }
+        };
     }
 })();
 

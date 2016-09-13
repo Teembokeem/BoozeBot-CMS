@@ -1,11 +1,13 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
         <content-title title="{{ac.contentTitle}}"></content-title>
-        <br>
-        <div>
-        {{ac.orders}}
-        dashboard
-
-        </div>
+        {{vc.pieChart}}
+        <canvas 
+            id="pie" 
+            class="chart chart-pie" 
+            chart-data="vc.orderNums" 
+            chart-labels="vc.labels" 
+            chart-options="vc.options">
+        </canvas>
   </ion-content>
 </ion-view>

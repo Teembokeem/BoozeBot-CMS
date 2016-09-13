@@ -8,50 +8,20 @@
     OrdersCtrl.$inject = ['$log', 'OrderManager', 'OrderDispatcher'];
 
     function OrdersCtrl($log, OrderManager, OrderDispatcher) {
-        var vm = this;
+        var vc = this;
         $log.instantiate("Orders", "Controller");
         $log.info("Manager", OrderManager)
 
+        vc.stateHandler = 'booze.orders';
+        vc.orders = OrderManager.orders;
+        vc.select = function(order) {
+            vc.stateHandler = 'booze.orders.show';
+            vc.order = order;
+        };
 
-        vm.orders = OrderManager.orders;
-        // OrderManager
-        //     .getOrders()
-        //     .then(function(data) {
-        //         console.log("Data", data)
-        //         vm.orders = data
-        //     })
-
-        // OrderDispatcher
-        //     .post({
-        //         status: 0,
-        //         products: [],
-        //         qty: [],
-        //         total: 0
-        //     })
-        //     .then(function(response) {
-        //         $log.info("RESPONSES", response)
-        //     })
-
-        
-        
-        // OrderManager
-        //     .updateOrder( "57d1cf4d049a2084435323f1", {
-        //         status: 1,
-        //         products: ['sup bitches'],
-        //         qty: [1],
-        //         total: 0
-        //     })
-        //     .then(function(response) {
-        //         $log.info("RESPONSES===============================", response)
-        //     })
-
-        // OrderManager
-        //     .deleteOrder('57d1cf4d049a2084435323f1')
-        //     .then(function(response) {
-        //         $log.info("RESPONSE BITCHES,  YOURE GONE", response)
-        //     })
-           
+        vc.deselect = function() {
+            vc.order = null;
+            vc.stateHandler = 'booze.orders';
+        };
     }
 })();
-
-// Todo: DO SHIT
