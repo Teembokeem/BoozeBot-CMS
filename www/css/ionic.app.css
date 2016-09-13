@@ -9830,13 +9830,16 @@ a.button {
 .nopad {
   padding: 0; }
 
+input {
+  border-radius: 0.3em;
+  width: 50%;
+  border: 1px solid lightgrey;
+  padding: 0.7em; }
+
 .pane {
   background-color: #f0f0f0; }
   .pane .scroll {
     width: 100%; }
-
-.col {
-  padding: 1em; }
 
 body {
   background-size: cover;
@@ -9926,3 +9929,34 @@ content-title {
     border-radius: 0.5em; }
     .products-view products-list .products-list-directive-view *.product-box :hover {
       background-color: light-grey; }
+
+.products-view product-show {
+  width: 100%; }
+  .products-view product-show .product-show-directive-view {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.5em;
+    border: 1px solid lightgrey; }
+    .products-view product-show .product-show-directive-view .product-show-header {
+      font-size: 3em; }
+      .products-view product-show .product-show-directive-view .product-show-header .back-button {
+        background-color: white;
+        border: none;
+        font-size: 1em;
+        padding: 0 0;
+        color: lightgrey;
+        font-weight: 200;
+        font-family: 'SourceSansPro-light'; }
+    .products-view product-show .product-show-directive-view .product-box {
+      text-align: center; }
+      .products-view product-show .product-show-directive-view .product-box .row .col img {
+        width: 55%; }
+    .products-view product-show .product-show-directive-view .description-container {
+      text-align: left;
+      vertical-align: top;
+      font-size: 1.2em; }
+      .products-view product-show .product-show-directive-view .description-container .title {
+        font-size: 0.8em;
+        font-weight: bold; }

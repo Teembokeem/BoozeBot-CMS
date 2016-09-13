@@ -21,4 +21,67 @@
 
         }
     }
+
+    product-show {
+        width: 100%;
+        // color: red;
+
+        .product-show-directive-view {
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            // padding: 0 10em;
+            background-color: white;
+            border-radius: 0.5em;
+            border: 1px solid lightgrey;
+
+            .product-show-header {
+                font-size: 3em;
+
+                .back-button {
+                    background-color: white;
+                    border: none;
+                    font-size: 1em;
+                    padding: 0 0;
+                    color: lightgrey;
+                    font-weight: 200;
+                    font-family: 'SourceSansPro-light';
+                }
+            }
+            .product-box {
+                text-align: center;
+                
+                .row {
+                    .col {
+                        img {
+                            width: 55%;
+                        }
+                    } 
+                }
+            }
+
+            .description-container {
+                text-align: left;
+                vertical-align: top;
+                font-size: 1.2em;
+
+                .title {
+                    font-size: 0.8em;
+                    font-weight: bold;
+                }
+                .description {
+                    // font-style: italic;
+                    // font-family: 'Lora';
+                    // font-size: 3em;
+
+                }
+
+                .price {
+                    // font-size: 2em;
+                    // font-weight: bold;
+                    
+                }
+            }
+        }
+    }
 }

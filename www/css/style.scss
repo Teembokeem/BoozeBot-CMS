@@ -18,6 +18,12 @@
     // color: white;
 }
 
+input {
+    border-radius: 0.3em;
+    width: 50%;
+    border: 1px solid lightgrey;
+    padding: 0.7em;
+}
 .pane {
     background-color: rgb(240, 240, 240);
 
@@ -26,10 +32,10 @@
     }
 }
 
-.col {
-    // width: 33% !important;
-    padding: 1em;
-}
+// .col {
+//     // width: 33% !important;
+//     padding: 1em;
+// }
 
 body {
     // background-color: grey;
