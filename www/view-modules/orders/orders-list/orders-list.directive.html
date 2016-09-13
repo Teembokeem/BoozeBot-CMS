@@ -18,7 +18,7 @@
            </div>
        </div>
        <div class="row orders-container">
-           <div ng-repeat="order in orders | filter:{'status': vc.filter}" class="col">
+           <div ng-repeat="order in orders | filter:{'status': vc.filter ||'Pending'}" class="col">
                <div class="order-box container">
                    <button ng-click="select(order)" class="row">
                        <span class="">
@@ -32,6 +32,17 @@
                             Status: {{order['status']}}
                        </span>
                    </button>
+                   <!-- Can only assign Order-->
+                    <div ng-if="order.status == 'Pending'">
+                        <span>
+                            Selcet Driver To Assign: 
+                            <select ng-model="driver">
+                                <option value="Sarah Marshall">Sarah Marshall</option>
+                                <option value="Marky Mark">Marky Mark</option>
+                                <option value="Tom Cruise">Tom Cruise</option>
+                            </select>
+                            <button ng-click="order.assign(driver)">Assign</button>
+                    </div>
                </div>
            </div>
        </div>
