@@ -9906,6 +9906,11 @@ body {
               height: 5em;
               text-align: left;
               padding-left: 1em; }
+            body ui-view .workspace-container .menu-component menu .menu-directive-view .shopping-cart {
+              position: fixed;
+              bottom: 7em;
+              padding-left: 1em;
+              font-size: 1em; }
       body ui-view .workspace-container .view-component {
         width: 90%;
         height: 100%;
@@ -9960,3 +9965,12 @@ content-title {
       .products-view product-show .product-show-directive-view .description-container .title {
         font-size: 0.8em;
         font-weight: bold; }
+
+.orders-view orders-list .orders-list-directive-view .orders-container {
+  width: 100%; }
+  .orders-view orders-list .orders-list-directive-view .orders-container .tab-container {
+    width: 100%; }
+    .orders-view orders-list .orders-list-directive-view .orders-container .tab-container .tab-filter {
+      width: 100%;
+      border: 1px solid lightgrey;
+      border-radius: 0.5em; }
