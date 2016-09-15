@@ -1,18 +1,165 @@
 .orders-view {
     orders-list {
+        width: 100%;
         .orders-list-directive-view {
+            width: 100%;
             .orders-container {
                 width: 100%;
+                margin-left: 1em;
 
                 .tab-container {
                     width: 100%;
+                    // text-align: center;
                     
 
                     .tab-filter {
-                        width: 100%;
-                        border: 1px solid lightgrey;
-                        border-radius: 0.5em;
+                        width: 19%;
+                        text-align: left;
+                        padding-left: 1em;
+                        
+                        // background-color: rgb(51, 51, 56);
+
+                        h1 {
+                            font-weight: 500;
+                            font-size: 2em;
+                            display: block;
+                        }
+
+                        span {
+                            text-align: center;
+                            // font-weight: bold;
+                            // letter-spacing: 0.2em;
+                            font-weight: lighter;
+                            font-size: 1.5em;
+                        }
+                        // border: 1px solid lightgrey;
+                        // border-radius: 0.5em;
                     }
+                }
+
+                .order-module {
+                    * {
+                    vertical-align: top;
+
+                    }
+                    *.order-box {
+                        width: 100%;
+                        height:15em;
+                        background-color: rgb(51, 51, 56);
+
+                        * {
+
+                        background-color: rgb(51, 51, 56);
+                        }
+
+                        .order-content {
+                            width: 100%;
+                            border: none;
+                            // box-shadow: 0 0 0.3em black;
+                            border-radius: 0.3em;
+
+                            .customer-info {
+                                text-align: left;
+                                padding-left: 1em;
+                                padding-top: 0.5em;
+                                
+                                .customer-avatar {
+                                    width: 3em;
+                                    border-radius: 50%;
+                                }
+
+                                .col-30 {
+                                    width: 15%;
+                                }
+
+                                .col-70 {
+                                    margin-left: 0.1em;
+                                    width: 75%;
+                                    padding-bottom: 0.5em;
+                                    border-bottom: 1px solid steelblue
+                                }
+                                
+
+                                .customer-name {
+                                    // width: 60%;
+                                    padding-top: 0.5em;
+                                    font-weight: bold;
+                                    // letter-spacing: 0.1em;
+                                    font-size: 1.8em;
+                                }
+
+                                .customer-total {
+
+                                }
+
+                            }
+
+                            .order-snapshot {
+                                text-align: center;
+
+                                .col-33 {
+                                    width: 32%;
+                                    margin-right: 0.1em;
+                                    
+                                    .order-figures {
+                                        display: block;
+                                        font-size: 1.8em;
+                                        font-weight: bold;
+                                        margin-bottom: 0.5em;
+                                    }
+
+                                    .order-figures-title {
+                                        font-size: 0.9em;
+                                        vertical-align: bottom;
+                                    }
+                                }
+
+                                .customer-avatar {
+                                    width: 3em;
+                                    border-radius: 50%;
+                                }
+
+                            }
+
+                            .driver-snapshot {
+                                padding-top: 0.8em;
+                                padding-left: 0.6em;
+                                text-align: left;
+                                width: 85%;
+                                border-top: 1px solid steelblue;
+
+                                .col {
+                                    i {
+                                        font-size: 2em;
+                                        width: 40%;
+                                    }
+
+                                    span {
+                                        padding-top: 0.3em;
+                                        font-size: 1.3em;
+                                        font-weight: bold;
+                                    }
+                                }
+                            }
+
+                        }
+                    }
+
+                    .order-filter {
+                        width: 19%;
+                        text-align: center;
+                        // background-color: rgb(51, 51, 56);
+
+                        span {
+                            text-align: center;
+                            // font-weight: bold;
+                            font-size: 1.2em;
+                        }
+                        // border: 1px solid lightgrey;
+                        // border-radius: 0.5em;
+                    }
+
+
                 }
             }
         }
