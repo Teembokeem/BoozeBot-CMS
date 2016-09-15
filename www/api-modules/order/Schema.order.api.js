@@ -54,6 +54,8 @@
         return this.total;
     }
 
+
+
     Order.prototype.accept = function() {
         var status = statusEnum.indexOf(this.status);
         if (status == 1) {
