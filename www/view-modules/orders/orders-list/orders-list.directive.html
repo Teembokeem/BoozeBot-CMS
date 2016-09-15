@@ -7,6 +7,7 @@
                <h1>
                     PENDING
                </h1>
+               <i class="icon ion-ios-arrow-right"></i>
                <span>
                 {{(orders | filter:{'status':'Pending'}).length }} {{(orders | filter:{'status':'Pending'}).length > 1 ? 'ORDERS' : 'ORDER'}}
                </span>
@@ -15,6 +16,7 @@
                <h1>
                     ASSIGNED     
                </h1>
+               <i class="icon ion-ios-arrow-right"></i>
                <span>
                {{(orders | filter:{'status':'Assigned'}).length }} {{(orders | filter:{'status':'Assigned'}).length > 1 ? 'ORDERS' : 'ORDER'}}
                </span>
@@ -23,6 +25,7 @@
                <h1>
                    ACCEPTED
                </h1>
+               <i class="icon ion-ios-arrow-right"></i>
                <span>
                 {{(orders | filter:{'status':'Accepted'}).length }} {{(orders | filter:{'status':'Accepted'}).length > 1 ? 'ORDERS' : 'ORDER'}}
                </span>
@@ -31,6 +34,7 @@
                <h1>
                     IN PROGRESS
                </h1>
+               <i class="icon ion-ios-arrow-right"></i>
                <span>
                 {{(orders | filter:{'status':'In Progress'}).length }} {{(orders | filter:{'status':'In Progress'}).length > 1 ? 'ORDERS' : 'ORDER'}}
                </span>
@@ -39,6 +43,7 @@
                <h1>
                    COMPLETED 
                </h1>
+               <i class="icon ion-ios-arrow-right"></i>
                <span>
                {{(orders | filter:{'status':'Completed'}).length }} {{(orders | filter:{'status':'Completed'}).length > 1 ? 'ORDERS' : 'ORDER'}}
                </span>
@@ -94,28 +99,28 @@
                                     </span>
                                 </div>
                             </div>
+                            <br>
+                            <br>
+                            <div class="row nopad driver-snapshot">
+                                <div ng-if="order.status == 'Pending'" class="col">
+                                    <span>
+                                        Choose Driver: 
+                                        <select ng-model="driver">
+                                            <option value="Sarah Marshall">Sarah Marshall</option>
+                                            <option value="Marky Mark">Marky Mark</option>
+                                            <option value="Tom Cruise">Tom Cruise</option>
+                                        </select>
+                                        <button ng-click="order.assign(driver)">Assign</button>
+                                </div>
+                                <div ng-if="order.status !== 'Pending'" class="col">
+                                    <i class="icon ion-model-s"></i>
+                                    <span class="driver-name">
+                                        {{order.driver}}
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <br>
-                        <br>
                         <!-- Can only assign Order-->
-                        <div class="row nopad driver-snapshot">
-                            <div ng-if="order.status == 'Pending'">
-                                <span>
-                                    Choose Driver: 
-                                    <select ng-model="driver">
-                                        <option value="Sarah Marshall">Sarah Marshall</option>
-                                        <option value="Marky Mark">Marky Mark</option>
-                                        <option value="Tom Cruise">Tom Cruise</option>
-                                    </select>
-                                    <button ng-click="order.assign(driver)">Assign</button>
-                            </div>
-                            <div ng-if="order.status !== 'Pending'" class="col">
-                                <i class="icon ion-model-s"></i>
-                                <span class="driver-name">
-                                    {{order.driver}}
-                                </span>
-                            </div>
-                        </div>
                     </div>
                 </div>
            </div>
@@ -212,7 +217,7 @@
                             <br>
                             <br>
                             <div class="row nopad order-snapshot">
-                                <div class="col-33">                                    
+                                <div class="col-22">                                    
                                     <span class="order-figures">
                                         {{order.totalqty}}
                                     </span>
@@ -389,7 +394,7 @@
                             <br>
                             <!-- Can only assign Order-->
                             <div class="row nopad driver-snapshot">
-                                <div ng-if="order.status == 'Pending'">
+                                <div ng-if="order.status == 'Pending'" class="col">
                                     <span>
                                         Choose Driver: 
                                         <select ng-model="driver">

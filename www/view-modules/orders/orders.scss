@@ -22,11 +22,21 @@
                         h1 {
                             font-weight: 500;
                             font-size: 2em;
-                            display: block;
+                            display: inline-block;
+                        }
+
+                        i {
+                            display: inline-block;
+                            right: 0;
+                            color: steelblue;
+                            margin-left: 1em;
+                            color: steelblue;
+                            font-size: 2em;
                         }
 
                         span {
-                            text-align: center;
+                            display: block;
+                            text-align: left;
                             // font-weight: bold;
                             // letter-spacing: 0.2em;
                             font-weight: lighter;
@@ -95,11 +105,14 @@
                             }
 
                             .order-snapshot {
-                                text-align: center;
-
-                                .col-33 {
+                                // text-align: left;
+                                .col-22 {
+                                    width: 25% !important;
+                                }
+                                .col-33, .col-22 {
+                                    text-align: center;
                                     width: 32%;
-                                    margin-right: 0.1em;
+                                    // margin-right: 0.1em;
                                     
                                     .order-figures {
                                         display: block;
