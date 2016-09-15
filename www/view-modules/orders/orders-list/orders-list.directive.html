@@ -1,23 +1,419 @@
+<br>
 <div class="orders-list-directive-view container">
    <div class="orders-container">
-       <div class="row tab-container">
-           <div ng-click="vc.filter = 'Pending'" class="col-20 col tab-filter">
-               Pending {{(orders | filter:{'status':'Pending'}).length }}
+       <div class="row tab-container nopad">
+           
+           <div ng-click="vc.filter = 'Pending'" class="col tab-filter nopad">
+               <h1>
+                    PENDING
+               </h1>
+               <span>
+                {{(orders | filter:{'status':'Pending'}).length }} {{(orders | filter:{'status':'Pending'}).length > 1 ? 'ORDERS' : 'ORDER'}}
+               </span>
            </div>
-           <div ng-click="vc.filter = 'Assigned'" class="col-20 col tab-filter">
-               Assigned {{(orders | filter:{'status':'Assigned'}).length }}
+           <div ng-click="vc.filter = 'Assigned'" class=" col tab-filter nopad">
+               <h1>
+                    ASSIGNED     
+               </h1>
+               <span>
+               {{(orders | filter:{'status':'Assigned'}).length }} {{(orders | filter:{'status':'Assigned'}).length > 1 ? 'ORDERS' : 'ORDER'}}
+               </span>
            </div>
-           <div ng-click="vc.filter = 'Progress'" class="col-20 col tab-filter">
-               In Progress {{(orders | filter:{'status':'In Progress'}).length }}
+           <div ng-click="vc.filter = 'Accepted'" class=" col tab-filter nopad">
+               <h1>
+                   ACCEPTED
+               </h1>
+               <span>
+                {{(orders | filter:{'status':'Accepted'}).length }} {{(orders | filter:{'status':'Accepted'}).length > 1 ? 'ORDERS' : 'ORDER'}}
+               </span>
            </div>
-           <div ng-click="vc.filter = 'Accepted'" class="col-20 col tab-filter">
-               Accepted {{(orders | filter:{'status':'Accepted'}).length }}
+           <div ng-click="vc.filter = 'Progress'" class=" col tab-filter nopad">
+               <h1>
+                    IN PROGRESS
+               </h1>
+               <span>
+                {{(orders | filter:{'status':'In Progress'}).length }} {{(orders | filter:{'status':'In Progress'}).length > 1 ? 'ORDERS' : 'ORDER'}}
+               </span>
            </div>
-           <div ng-click="vc.filter = 'Completed'" class="col-20 col tab-filter">
-               Completed {{(orders | filter:{'status':'Completed'}).length }}
+           <div ng-click="vc.filter = 'Completed'" class=" col tab-filter nopad">
+               <h1>
+                   COMPLETED 
+               </h1>
+               <span>
+               {{(orders | filter:{'status':'Completed'}).length }} {{(orders | filter:{'status':'Completed'}).length > 1 ? 'ORDERS' : 'ORDER'}}
+               </span>
            </div>
        </div>
-       <div class="row orders-container">
+       <br>
+       <br>
+       <div class="row tab-container nopad order-module">
+           <div class="col order-filter nopad">
+                <div ng-repeat="order in orders | filter:{'status': 'Pending'}" class="col">
+                    <div class="order-box container">
+                        <div ng-click="select(order)" class="row nopad order-content">
+                            <div class="row nopad customer-info">
+                                <div class="col-30">                                    
+                                    <img src="../img/ben.png" alt="" class=" customer-avatar">
+                                </div>
+                                <div class="col-70">
+                                    <span class=" customer-name">
+                                        {{order.name}}
+                                    </span>
+                                </div>
+                                <!--<span class="customer-total">
+                                        Total: {{order.total}}
+                                </span>-->
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row nopad order-snapshot">
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        {{order.totalqty}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        ITEMS
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        ${{order.total}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        TOTAL
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        <!--TODO: should show when received or how long since received-->
+                                        <!--{{order.createdAt}}-->
+                                        {{'22m'}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        SINCE RECEIVED
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <!-- Can only assign Order-->
+                        <div class="row nopad driver-snapshot">
+                            <div ng-if="order.status == 'Pending'">
+                                <span>
+                                    Choose Driver: 
+                                    <select ng-model="driver">
+                                        <option value="Sarah Marshall">Sarah Marshall</option>
+                                        <option value="Marky Mark">Marky Mark</option>
+                                        <option value="Tom Cruise">Tom Cruise</option>
+                                    </select>
+                                    <button ng-click="order.assign(driver)">Assign</button>
+                            </div>
+                            <div ng-if="order.status !== 'Pending'" class="col">
+                                <i class="icon ion-model-s"></i>
+                                <span class="driver-name">
+                                    {{order.driver}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </div>
+           <div class=" col order-filter nopad">
+                <div ng-repeat="order in orders | filter:{'status': 'Assigned'}" class="col">
+                    <div class="order-box container">
+                        <div ng-click="select(order)" class="row nopad order-content">
+                            <div class="row nopad customer-info">
+                                <div class="col-30">                                    
+                                    <img src="../img/ben.png" alt="" class=" customer-avatar">
+                                </div>
+                                <div class="col-70">
+                                    <span class=" customer-name">
+                                        {{order.name}}
+                                    </span>
+                                </div>
+                                <!--<span class="customer-total">
+                                        Total: {{order.total}}
+                                </span>-->
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row nopad order-snapshot">
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        {{order.totalqty}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        ITEMS
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        ${{order.total}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        TOTAL
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        <!--TODO: should show when received or how long since received-->
+                                        <!--{{order.createdAt}}-->
+                                        {{'22m'}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        SINCE RECEIVED
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- Can only assign Order-->
+                            <div class="row nopad driver-snapshot">
+                                <div ng-if="order.status == 'Pending'">
+                                    <span>
+                                        Choose Driver: 
+                                        <select ng-model="driver">
+                                            <option value="Sarah Marshall">Sarah Marshall</option>
+                                            <option value="Marky Mark">Marky Mark</option>
+                                            <option value="Tom Cruise">Tom Cruise</option>
+                                        </select>
+                                        <button ng-click="order.assign(driver)">Assign</button>
+                                </div>
+                                <div ng-if="order.status !== 'Pending'" class="col">
+                                    <i class="icon ion-model-s"></i>
+                                    <span class="driver-name">
+                                        {{order.driver}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
+           <div class=" col order-filter nopad">
+                <div ng-repeat="order in orders | filter:{'status': 'Progress'}" class="col">
+                    <div class="order-box container">
+                        <div ng-click="select(order)" class="row nopad order-content">
+                            <div class="row nopad customer-info">
+                                <div class="col-30">                                    
+                                    <img src="../img/ben.png" alt="" class=" customer-avatar">
+                                </div>
+                                <div class="col-70">
+                                    <span class=" customer-name">
+                                        {{order.name}}
+                                    </span>
+                                </div>
+                                <!--<span class="customer-total">
+                                        Total: {{order.total}}
+                                </span>-->
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row nopad order-snapshot">
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        {{order.totalqty}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        ITEMS
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        ${{order.total}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        TOTAL
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        <!--TODO: should show when received or how long since received-->
+                                        <!--{{order.createdAt}}-->
+                                        {{'22m'}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        SINCE RECEIVED
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- Can only assign Order-->
+                            <div class="row nopad driver-snapshot">
+                                <div ng-if="order.status == 'Pending'">
+                                    <span>
+                                        Choose Driver: 
+                                        <select ng-model="driver">
+                                            <option value="Sarah Marshall">Sarah Marshall</option>
+                                            <option value="Marky Mark">Marky Mark</option>
+                                            <option value="Tom Cruise">Tom Cruise</option>
+                                        </select>
+                                        <button ng-click="order.assign(driver)">Assign</button>
+                                </div>
+                                <div ng-if="order.status !== 'Pending'" class="col">
+                                    <i class="icon ion-model-s"></i>
+                                    <span class="driver-name">
+                                        {{order.driver}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
+           <div class=" col order-filter nopad">
+                <div ng-repeat="order in orders | filter:{'status': 'Accepted'}" class="col">
+                    <div class="order-box container">
+                        <div ng-click="select(order)" class="row nopad order-content">
+                            <div class="row nopad customer-info">
+                                <div class="col-30">                                    
+                                    <img src="../img/ben.png" alt="" class=" customer-avatar">
+                                </div>
+                                <div class="col-70">
+                                    <span class=" customer-name">
+                                        {{order.name}}
+                                    </span>
+                                </div>
+                                <!--<span class="customer-total">
+                                        Total: {{order.total}}
+                                </span>-->
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row nopad order-snapshot">
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        {{order.totalqty}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        ITEMS
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        ${{order.total}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        TOTAL
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        <!--TODO: should show when received or how long since received-->
+                                        <!--{{order.createdAt}}-->
+                                        {{'22m'}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        SINCE RECEIVED
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- Can only assign Order-->
+                            <div class="row nopad driver-snapshot">
+                                <div ng-if="order.status == 'Pending'">
+                                    <span>
+                                        Choose Driver: 
+                                        <select ng-model="driver">
+                                            <option value="Sarah Marshall">Sarah Marshall</option>
+                                            <option value="Marky Mark">Marky Mark</option>
+                                            <option value="Tom Cruise">Tom Cruise</option>
+                                        </select>
+                                        <button ng-click="order.assign(driver)">Assign</button>
+                                </div>
+                                <div ng-if="order.status !== 'Pending'" class="col">
+                                    <i class="icon ion-model-s"></i>
+                                    <span class="driver-name">
+                                        {{order.driver}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
+           <div class=" col order-filter nopad">
+                <div ng-repeat="order in orders | filter:{'status': 'Completed'}" class="col">
+                    <div class="order-box container">
+                        <div ng-click="select(order)" class="row nopad order-content">
+                            <div class="row nopad customer-info">
+                                <div class="col-30">                                    
+                                    <img src="../img/ben.png" alt="" class=" customer-avatar">
+                                </div>
+                                <div class="col-70">
+                                    <span class=" customer-name">
+                                        {{order.name}}
+                                    </span>
+                                </div>
+                                <!--<span class="customer-total">
+                                        Total: {{order.total}}
+                                </span>-->
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row nopad order-snapshot">
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        {{order.totalqty}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        ITEMS
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        ${{order.total}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        TOTAL
+                                    </span>
+                                </div>
+                                <div class="col-33">                                    
+                                    <span class="order-figures">
+                                        <!--TODO: should show when received or how long since received-->
+                                        <!--{{order.createdAt}}-->
+                                        {{'22m'}}
+                                    </span>
+                                    <span class="order-figures-title">
+                                        SINCE RECEIVED
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <!-- Can only assign Order-->
+                            <div class="row nopad driver-snapshot">
+                                <div ng-if="order.status == 'Pending'">
+                                    <span>
+                                        Choose Driver: 
+                                        <select ng-model="driver">
+                                            <option value="Sarah Marshall">Sarah Marshall</option>
+                                            <option value="Marky Mark">Marky Mark</option>
+                                            <option value="Tom Cruise">Tom Cruise</option>
+                                        </select>
+                                        <button ng-click="order.assign(driver)">Assign</button>
+                                </div>
+                                <div ng-if="order.status !== 'Pending'" class="col">
+                                    <i class="icon ion-model-s"></i>
+                                    <span class="driver-name">
+                                        {{order.driver}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+           </div>
+       </div>
+       
+       <!--<div class="row orders-container">
            <div ng-repeat="order in orders | filter:{'status': vc.filter ||'Pending'}" class="col">
                <div class="order-box container">
                    <button ng-click="select(order)" class="row">
@@ -25,17 +421,14 @@
                             Name: {{order.name}}
                        </span>
                        <span class="">
-                            Totoal: {{order.total}}
-                       </span>
-
-                       <span class="">
-                            Status: {{order['status']}}
+                            Total: {{order.total}}
                        </span>
                    </button>
-                   <!-- Can only assign Order-->
+                    Can only assign Order
+
                     <div ng-if="order.status == 'Pending'">
                         <span>
-                            Selcet Driver To Assign: 
+                            Select Driver To Assign: 
                             <select ng-model="driver">
                                 <option value="Sarah Marshall">Sarah Marshall</option>
                                 <option value="Marky Mark">Marky Mark</option>
@@ -45,6 +438,6 @@
                     </div>
                </div>
            </div>
-       </div>
+       </div>-->
    </div>
 </div>
