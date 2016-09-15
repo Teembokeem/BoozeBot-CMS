@@ -129,7 +129,15 @@
       Templates are in the /templates folder (but you could also
       have templates inline in this html file if you'd like).
     -->
-    <ui-view></ui-view>
+    <br>
+    <div class="row component-container">
+        <div class="menu-component col col-10 nopad">
+            <menu></menu>
+        </div>
+        <div class="col nopad">
+            <ui-view></ui-view>
+        </div>
+    </div>
 
   </body>
 </html>
