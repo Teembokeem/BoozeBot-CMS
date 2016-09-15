@@ -14,6 +14,15 @@
 
         vc.stateHandler = 'booze.orders';
         vc.orders = OrderManager.orders;
+
+        // temp solution for reducing values for total quantity;
+        vc.orders.forEach(function(order) {
+            order.totalqty = Object.keys(order.qty).reduce(function(sum, key) {
+                return sum + order.qty[key]
+            }, 0);
+        })
+        $log.info("orders", OrderManager.orders)
+
         vc.select = function(order) {
             vc.stateHandler = 'booze.orders.show';
             vc.order = order;
