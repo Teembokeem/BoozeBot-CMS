@@ -10051,8 +10051,6 @@ content-title {
               padding-top: 0.5em;
               font-weight: bold;
               font-size: 1.8em; }
-          .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .col-22 {
-            width: 25% !important; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .col-33, .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .col-22 {
             text-align: center;
             width: 32%; }
@@ -10064,6 +10062,10 @@ content-title {
             .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .col-33 .order-figures-title, .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .col-22 .order-figures-title {
               font-size: 0.9em;
               vertical-align: bottom; }
+          .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .qty {
+            width: 25% !important; }
+          .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .figure {
+            width: 36%; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .order-snapshot .customer-avatar {
             width: 3em;
             border-radius: 50%; }

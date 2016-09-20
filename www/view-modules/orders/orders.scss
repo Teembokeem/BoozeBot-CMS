@@ -156,9 +156,7 @@
 
                                 .order-snapshot {
                                     // text-align: left;
-                                    .col-22 {
-                                        width: 25% !important;
-                                    }
+                                    
                                     .col-33, .col-22 {
                                         text-align: center;
                                         width: 32%;
@@ -177,6 +175,13 @@
                                         }
                                     }
 
+                                    .qty {
+                                        width: 25% !important;
+                                    }
+
+                                    .figure {
+                                        width: 36%;
+                                    }
                                     .customer-avatar {
                                         width: 3em;
                                         border-radius: 50%;
