@@ -1,0 +1,14 @@
+    <div class="content-headers">
+        <span class="name"><span class="separator">|</span>NAME</span>
+        <span class="order"><span class="separator">|</span>ORDER NUMBER</span>
+        <span class="products"><span class="separator">|</span>PRODUCTS</span>
+        <span class="address"><span class="separator">|</span>ADDRESS</span>
+        <span class="notes"><span class="separator">|</span>NOTES</span>
+        <span class="time"><span class="separator">|</span>TIME</span>
+        <span class="driver"><span class="separator">|</span>DELIVERY</span>
+    </div>
+    <order-line-component ng-if="tab == 'Pending'" select="select" orders="orders" status="'Pending'"></order-line-component>
+    <order-line-component ng-if="tab == 'Assigned'" select="select" orders="orders" status="'Assigned'"></order-line-component>
+    <order-line-component ng-if="tab == 'Accepted'" select="select" orders="orders" status="'Accepted'"></order-line-component>
+    <order-line-component ng-if="tab == 'In Progress'" select="select" orders="orders" status="'In Progress'"></order-line-component>
+    <order-line-component ng-if="tab == 'Completed'" select="select" orders="orders" status="'Completed'"></order-line-component>
