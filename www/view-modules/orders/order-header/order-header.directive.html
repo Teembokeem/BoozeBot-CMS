@@ -1,0 +1,9 @@
+<div ng-class="{blur: tab != filter && view == 'line'}" class="col tab-filter nopad">
+    <h1>
+        {{filter | uppercase}}
+    </h1>
+    <i class="icon ion-ios-arrow-right"></i>
+    <span>
+    {{(orders | filter:{'status': filter}).length }} {{(orders | filter:{'status': filter}).length > 1 ? 'ORDERS' : 'ORDER'}}
+    </span>
+</div>
