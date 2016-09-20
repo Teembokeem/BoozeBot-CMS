@@ -11,11 +11,13 @@
      var directive = {
          templateUrl: 'view-modules/orders/order-status/order-status.directive.html',
          restrict: 'EA',
+         replace: true,
          controller: orderStatusCtrl,
          controllerAs: 'dc',
          scope: {
              order: '=',
-             exit: '='
+             exit: '=',
+             view: '='
          }
          
      };
