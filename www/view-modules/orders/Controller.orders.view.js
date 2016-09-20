@@ -33,6 +33,14 @@
             vc.stateHandler = 'booze.orders';
         };
 
-        vc.filter = 'Pending';
+        vc.toggleSelect = 'line';
+        vc.tabSelect = 'Assigned';
+
+        vc.toggleValues = function(view, option) {
+            console.log("toggle values", view)
+            console.log("toggle values", option)
+            vc.toggleSelect = view;
+            view === 'line' && !option ? vc.tabSelect = 'Pending' : vc.tabSelect = option;
+        }
     }
 })();

@@ -7,7 +7,7 @@
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
-        "www/lib/": true,
+        // "www/lib/": true,
         "**/node_modules": true,
         "hooks/": true
     },
