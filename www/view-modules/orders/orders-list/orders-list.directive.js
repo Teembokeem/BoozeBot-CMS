@@ -14,7 +14,10 @@
           //  List of orders to display
            orders: '=',
           //  Function to call when clicking a product
-           select: '='
+           select: '=',
+           view: '=',
+           tab: '=',
+           toggle: '='
          }
          
      };
