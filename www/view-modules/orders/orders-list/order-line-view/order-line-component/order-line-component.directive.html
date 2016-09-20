@@ -1,0 +1,68 @@
+<div class="col order-filter nopad">
+    <div ng-repeat="order in orders | filter:{'status': status}" class="col">
+                    <!--{{order}}-->
+        <div ng-click="select(order)" class="order-box container">
+            <div class="row">
+                <div class="nopad order-info">
+                    <div class="col-10 image">                                    
+                        <img src="../img/ben.png" alt="" class=" customer-avatar">
+                    </div>
+                    <div class="col-10 name">
+                        <span class=" customer-name">
+                            {{order.name | uppercase}}
+                        </span>
+                        <span class="customer-label">
+                            CUSTOMER
+                        </span>
+                    </div>
+                    <div class="col-10 order-number">
+                        <span class=" customer-name">
+                            {{order.id ? order.id : 'F1JDK4O4'}}
+                        </span>
+                    </div>
+                    <div class="col-10 order-details">
+                        <span ng-repeat="product in order.products">
+                            <span class="number">
+                            {{order.qty[product._id]}}
+
+                            </span>
+                            <span>
+                             {{product.Description}}
+                            </span>
+                        </span>
+                    </div>  
+                    <div class="col-10 address">
+                        <span class=" order-address">
+                            {{order.address ? order.address : '3867 Grand View Boulevard'}}
+                        </span>
+                    </div>
+                    <div class="col-10 notes">
+                        <span class=" order-notes">
+                            {{order.notes ? order.notes : 'Upstairs around the corner. Room 8. Drop by the door'}}
+                        </span>
+                    </div>
+                    <div class="col-10 time">                                    
+                        <span class="order-figures">
+                            <!--TODO: should show when received or how long since received-->
+                            <!--{{order.createdAt}}-->
+                            {{'22m'}}
+                        </span>
+                    </div>
+                    <order-status order="order" view="'list'"></order-status>
+                    <!--<div ng-if="order.status == 'Pending'" class="col">
+                        <span>
+                            Choose Driver: 
+                            <select ng-model="driver">
+                                <option value="Sarah Marshall">Sarah Marshall</option>
+                                <option value="Marky Mark">Marky Mark</option>
+                                <option value="Tom Cruise">Tom Cruise</option>
+                            </select>
+                            <button ng-click="order.assign(driver)">Assign</button>
+                        </span>
+                    </div>-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
