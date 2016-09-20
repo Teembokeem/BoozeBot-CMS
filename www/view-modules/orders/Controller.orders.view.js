@@ -33,8 +33,8 @@
             vc.stateHandler = 'booze.orders';
         };
 
-        vc.toggleSelect = 'line';
-        vc.tabSelect = 'Assigned';
+        vc.toggleSelect = 'command';
+        vc.tabSelect = 'Pending';
 
         vc.toggleValues = function(view, option) {
             console.log("toggle values", view)
