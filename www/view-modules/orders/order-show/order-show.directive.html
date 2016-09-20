@@ -41,7 +41,9 @@
                 <button ng-click="dc.edit(order)">{{dc.showEdit ? "Cancel" : "Edit"}}</button>
                 <button ng-if="dc.showEdit" ng-click="dc.update(order, dc.order)">Update</button>
             </div>
-            <order-status exit="dc.exit" order="order"></order-status>
+            <br>
+            <br>
+            <order-status exit="dc.exit" order="order" view="'show'"></order-status>
         </div>
    </div>
 </div>
