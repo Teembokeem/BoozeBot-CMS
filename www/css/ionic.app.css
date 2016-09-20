@@ -10025,7 +10025,7 @@ content-title {
           font-size: 1.2em; }
       .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box {
         width: 100%;
-        height: 15em;
+        height: 17.5em;
         background-color: #333338; }
         .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box * {
           background-color: #333338; }
@@ -10077,11 +10077,14 @@ content-title {
               width: 100%; }
               .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .driver-snapshot .order-status-directive-view .row .col i {
                 font-size: 2em;
-                width: 40%; }
+                width: 40%;
+                margin-right: 0.7em; }
               .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .driver-snapshot .order-status-directive-view .row .col span {
                 padding-top: 0.3em;
                 font-size: 1.3em;
                 font-weight: bold; }
+              .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-command-view *.order-box .order-content .driver-snapshot .order-status-directive-view .row .select-driver select {
+                margin-bottom: 0.3em; }
       .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view {
         width: 100%; }
         .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers {
@@ -10096,17 +10099,17 @@ content-title {
               font-size: 0.9em;
               color: steelblue; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers .name {
-            margin-right: 4.5em; }
+            margin-right: 7%; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers .order {
-            margin-right: 2em; }
+            margin-right: 3.5%; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers .products {
-            margin-right: 9em; }
+            margin-right: 12%; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers .address {
-            margin-right: 9em; }
+            margin-right: 11%; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers .notes {
-            margin-right: 10em; }
+            margin-right: 13%; }
           .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .content-headers .time {
-            margin-right: 2em; }
+            margin-right: 3.5%; }
         .orders-view orders-list .orders-list-directive-view .orders-container .order-module order-line-view .order-filter {
           border-radius: 0.3em;
           width: 96%;
